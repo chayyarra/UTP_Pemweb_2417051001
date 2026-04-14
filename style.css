@@ -248,6 +248,62 @@ nav.scrolled { padding: 10px 60px; }
   color: var(--gold-light);
 }
 
+/* ── CUSTOM INFO WRAPPER (ABOUT PAGE) ── */
+.info-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center; 
+  margin-top: 36px;
+  grid-column: 1 / -1; /* Ini yang membuat dia membentang penuh (full width) melewati batas kiri-kanan */
+  width: 100%;
+}
+
+.stats-grid {
+  flex: 3; /* Porsi yang lebih panjang karena ada 4 kotak */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kotak berjajar menyamping */
+  gap: 16px;
+}
+
+.contact-box {
+  flex: 1; /* Porsi yang lebih kecil & pas untuk kotak oren */
+  background: var(--gold);
+  color: #0A0A12;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 115px; /* Tinggi kotak, disesuaikan agar sejajar dengan 4 kotak hitam */
+  border-radius: 2px;
+  transition: 0.3s;
+  text-decoration: none;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); 
+}
+
+.contact-box:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 900px) {
+  .info-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr 1fr; /* Di layar HP kembali jadi kotak 2x2 */
+  }
+  .contact-box {
+    min-height: 60px;
+  }
+}
+
 /* ── BUTTONS ── */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
