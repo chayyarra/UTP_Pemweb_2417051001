@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestasi | Chayyarra Igda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Chayyarra <span>✦</span> Igda</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html" class="active">Prestasi</a></li>
+      <li><a href="insights.html">Sertifikasi</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+
+    <header class="work-top">
+      <div>
+        <span class="section-tag">Portofolio & Prestasi</span>
+        <h2 class="section-title">Pengalaman & <em>Kejuaraan</em></h2>
+      </div>
+      <div class="filter-row">
+        <button class="ftab active" onclick="filterWork(this,'all')">Semua</button>
+        <button class="ftab" onclick="filterWork(this,'prestasi')">Atlet Taekwondo</button>
+        <button class="ftab" onclick="filterWork(this,'organisasi')">Organisasi</button>
+        <button class="ftab" onclick="filterWork(this,'akademik')">Akademik</button>
+      </div>
+    </header>
+
+    <div class="work-grid" id="workGrid">
+      <article class="wcard wide" data-cat="prestasi">
+        <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80" alt="Taekwondo" />
+        <div class="wcard-overlay">
+          <div class="wcard-info">
+            <span>Juara 1 Nasional · 2023 & 2025</span>
+            <h3>Piala Kemenpora & Kejati Cup 1</h3>
+          </div>
+        </div>
+      </article>
+      <article class="wcard" data-cat="organisasi">
+        <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=600&q=80" alt="Organisasi" />
+        <div class="wcard-overlay">
+          <div class="wcard-info">
+            <span>Ketua · 2026</span>
+            <h3>Kemuslimahan ROIS FMIPA</h3>
+          </div>
+        </div>
+      </article>
+      <article class="wcard" data-cat="organisasi">
+        <img src="https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?w=600&q=80" alt="Webinar" />
+        <div class="wcard-overlay">
+          <div class="wcard-info">
+            <span>Sekretaris · 2025</span>
+            <h3>Webinar SIGMA 6.0</h3>
+          </div>
+        </div>
+      </article>
+      <article class="wcard" data-cat="prestasi">
+        <img src="https://images.unsplash.com/photo-1566068500871-bdb30ee64e41?w=600&q=80" alt="Taekwondo Championship" />
+        <div class="wcard-overlay">
+          <div class="wcard-info">
+            <span>Juara 2 · Provinsi 2024</span>
+            <h3>Kejuaraan Provinsi Lampung</h3>
+          </div>
+        </div>
+      </article>
+      <article class="wcard wide" data-cat="akademik">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80" alt="Akademik" />
+        <div class="wcard-overlay">
+          <div class="wcard-info">
+            <span>IPK 3.70 · Semester 4</span>
+            <h3>Mahasiswi Berprestasi Ilmu Komputer UNILA</h3>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- KATALOG MEDALI -->
+    <div class="medal-section">
+      <span class="section-tag">Katalog Pertandingan</span>
+      <h2 class="section-title">Rekam Jejak <em>Medali</em></h2>
+      <div class="deco-line" style="margin-bottom:0;"><span>◆</span></div>
+
+      <div class="medal-grid" id="medalGrid">
+        <div class="medal-card" data-cat="prestasi">
+          <div class="medal-year">2023</div>
+          <div class="medal-rank">🥇 EMAS</div>
+          <div class="medal-event">Piala Kemenpora 2023</div>
+          <div class="medal-detail">Kategori: Kyorugi · Kelas 53kg · Tingkat Nasional</div>
+        </div>
+        <div class="medal-card" data-cat="prestasi">
+          <div class="medal-year">2025</div>
+          <div class="medal-rank">🥇 EMAS</div>
+          <div class="medal-event">Kejati Cup 1 — 2025</div>
+          <div class="medal-detail">Kategori: Kyorugi · Kelas 53kg · Tingkat Nasional</div>
+        </div>
+        <div class="medal-card" data-cat="prestasi">
+          <div class="medal-year">2024</div>
+          <div class="medal-rank silver">🥈 PERAK</div>
+          <div class="medal-event">Kejuaraan Provinsi Lampung 2024</div>
+          <div class="medal-detail">Kategori: Kyorugi · Tingkat Provinsi</div>
+        </div>
+        <div class="medal-card" data-cat="prestasi">
+          <div class="medal-year">2022</div>
+          <div class="medal-rank bronze">🥉 PERUNGGU</div>
+          <div class="medal-event">Open Tournament Regional 2022</div>
+          <div class="medal-detail">Kategori: Kyorugi · Kelas 53kg · Tingkat Regional</div>
+        </div>
+        <div class="medal-card" data-cat="prestasi">
+          <div class="medal-year">2021</div>
+          <div class="medal-rank">🥇 EMAS</div>
+          <div class="medal-event">Kejuaraan Daerah Lampung 2021</div>
+          <div class="medal-detail">Kategori: Kyorugi · Tingkat Daerah</div>
+        </div>
+        <div class="medal-card" data-cat="organisasi">
+          <div class="medal-year">2026</div>
+          <div class="medal-rank" style="font-size:1.4rem; color:var(--accent);">◆ KETUA</div>
+          <div class="medal-event">Kemuslimahan ROIS FMIPA UNILA</div>
+          <div class="medal-detail">Memimpin kegiatan kemuslimahan tingkat FMIPA</div>
+        </div>
+        <div class="medal-card" data-cat="organisasi">
+          <div class="medal-year">2025</div>
+          <div class="medal-rank" style="font-size:1.4rem; color:var(--accent);">◆ SEKRETARIS</div>
+          <div class="medal-event">Webinar SIGMA 6.0</div>
+          <div class="medal-detail">Sekretaris panitia webinar SIGMA tingkat nasional</div>
+        </div>
+        <div class="medal-card" data-cat="akademik">
+          <div class="medal-year">2024</div>
+          <div class="medal-rank" style="font-size:1.4rem; color:var(--gold);">✦ 3.70</div>
+          <div class="medal-event">IPK Terbaik Semester Genap 2024</div>
+          <div class="medal-detail">Program Studi Ilmu Komputer · FMIPA · UNILA</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Chayyarra Igda Pramesawari. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+      </nav>
+    </footer>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    function filterWork(btn, cat) {
+      document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.wcard, .medal-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

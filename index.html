@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chayyarra Igda — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════ LOGIN / INTRO SCREEN ═══════════ -->
+<div id="login-screen">
+  <canvas id="particles-canvas"></canvas>
+  <div class="login-bg-overlay"></div>
+
+  <div class="login-box">
+    <div class="login-crest"></div>
+
+    <h1 class="login-title">CHAYYARRA</h1>
+    <p class="login-subtitle">Ilmu Komputer · Universitas Lampung · 2026</p>
+
+    <div class="login-divider"><span>✦</span></div>
+
+    <div class="login-stats">
+      <div class="login-stat"><strong>3.70</strong><span>IPK</span></div>
+      <div class="login-stat"><strong>5+</strong><span>Medali</span></div>
+      <div class="login-stat"><strong>Smt 4</strong><span>Semester</span></div>
+    </div>
+
+    <button class="login-btn" id="enterBtn">
+      ▶ &nbsp; MASUK KE PORTOFOLIO
+    </button>
+
+    <p class="login-footer-txt">◈ · · · Chayyarra Igda Pramesawari · · · ◈</p>
+  </div>
+</div>
+
+<!-- ═══════════ MAIN APP ═══════════ -->
+<div id="app">
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Chayyarra <span>✦</span> Igda</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Prestasi</a></li>
+      <li><a href="insights.html">Sertifikasi</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <div class="hero">
+      <div class="hero-left">
+        <span class="hero-chip fu d1">Mahasiswi Ilmu Komputer & Atlet Nasional</span>
+        <h1 class="hero-title fu d2">
+          Antara <em>Logika</em>,<br/>
+          Disiplin &<br/>
+          <em>Prestasi</em>.
+        </h1>
+        <p class="hero-desc fu d3">
+          Mahasiswi Ilmu Komputer UNILA Semester 4, Atlet Taekwondo Nasional, dan Pemimpin Organisasi yang menjunjung tinggi kedisiplinan dan kepedulian sosial.
+        </p>
+        <div class="hero-btns fu d4">
+          <a href="about.html" class="btn btn-gold">Tentang Saya</a>
+          <a href="work.html" class="btn btn-outline">Lihat Prestasi</a>
+        </div>
+        <div class="hero-divider fu d5"></div>
+        <div class="hero-stats fu d5">
+          <div class="stat-card"><h3>3.70</h3><p>IPK Saat Ini</p></div>
+          <div class="stat-card"><h3>5+</h3><p>Medali Kejuaraan</p></div>
+          <div class="stat-card"><h3>3</h3><p>Posisi Pimpinan</p></div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Chayyarra Igda" class="hero-img" />
+        </div>
+        <div class="hero-badge">
+          <strong>Chayyarra Igda P.</strong>
+          <span>Bandar Lampung · UNILA</span>
+        </div>
+        <div class="hero-corner">2417051XXX · KLS B</div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Chayyarra Igda Pramesawari. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </nav>
+    </footer>
+  </section>
+
+</div><!-- /#app -->
+
+<script>
+/* ── PARTICLES ── */
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function init() {
+    resize();
+    particles = Array.from({ length: 80 }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.5 + 0.3,
+      dx: (Math.random() - 0.5) * 0.4,
+      dy: -Math.random() * 0.5 - 0.2,
+      alpha: Math.random() * 0.5 + 0.1,
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201,168,76,${p.alpha})`;
+      ctx.fill();
+      p.x += p.dx; p.y += p.dy;
+      if (p.y < -4) { p.y = H + 4; p.x = Math.random() * W; }
+      if (p.x < 0 || p.x > W) p.dx *= -1;
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  init(); draw();
+})();
+
+/* ── ENTER BUTTON ── */
+document.getElementById('enterBtn').addEventListener('click', function() {
+  const login = document.getElementById('login-screen');
+  const app   = document.getElementById('app');
+
+  login.style.transition = 'opacity 0.9s, transform 0.9s';
+  login.style.opacity = '0';
+  login.style.transform = 'scale(1.04)';
+
+  setTimeout(() => {
+    login.style.display = 'none';
+    app.style.display = 'block';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => { app.classList.add('visible'); });
+    });
+    sessionStorage.setItem('entered', '1');
+  }, 900);
+});
+
+/* ── SKIP IF ALREADY ENTERED THIS SESSION ── */
+if (sessionStorage.getItem('entered') === '1') {
+  document.getElementById('login-screen').style.display = 'none';
+  const app = document.getElementById('app');
+  app.style.display = 'block';
+  app.style.opacity = '1';
+}
+
+/* ── NAVBAR SCROLL ── */
+window.addEventListener('scroll', function() {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+});
+</script>
+</body>
+</html>
